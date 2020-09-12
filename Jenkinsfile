@@ -14,8 +14,8 @@ pipeline {
 		//withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
     		// some block
         	//bat "mvn -Dmaven.test.failure.ignore=true clean " //this is working in windows
-		    def mvnHome = tool name: 'MAVEN', type: 'maven'
-		    sh "${mvnHome}usr/bin/mvn clean"
+		    //def mvnHome = tool name: 'MAVEN', type: 'maven'
+		    sh "mvn clean"
         	
 
             }
