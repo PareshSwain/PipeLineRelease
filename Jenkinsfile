@@ -13,7 +13,8 @@ pipeline {
                 echo 'Clean..'
 		withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
     		// some block
-        	bat "mvn -Dmaven.test.failure.ignore=true clean "
+        	//bat "mvn -Dmaven.test.failure.ignore=true clean " //this is working in windows
+			sh "mvn clean "
         	}
 
             }
@@ -23,7 +24,7 @@ pipeline {
                 echo 'Compiling....'
 		withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
     		// some block
-        	bat "mvn -Dmaven.test.failure.ignore=true compile"
+        	//bat "mvn -Dmaven.test.failure.ignore=true compile"
         	}
 		}
 		}
@@ -33,7 +34,7 @@ pipeline {
                 echo 'Testing....'
 		withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
     		// some block
-        	bat "mvn -Dmaven.test.failure.ignore=true test"
+        	//bat "mvn -Dmaven.test.failure.ignore=true test"
         	}
 		}
 		}
@@ -43,7 +44,7 @@ pipeline {
                 echo 'Packaging....'
 		withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
     		// some block
-        	bat "mvn -Dmaven.test.failure.ignore=true package"
+        	//bat "mvn -Dmaven.test.failure.ignore=true package"
         	}
 		}
 		}
