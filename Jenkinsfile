@@ -15,8 +15,8 @@ pipeline {
     		// some block
         	//bat "mvn -Dmaven.test.failure.ignore=true clean " //this is working in windows
 		    def mvnHome = tool name: 'MAVEN', type: 'maven'
-		    sh "${mvnHome}/bin/mvn clean "
-        	}
+		    sh "${mvnHome}/bin/mvn clean"
+        	
 
             }
         }
