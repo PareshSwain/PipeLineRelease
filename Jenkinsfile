@@ -11,10 +11,11 @@ pipeline {
         stage('Clean') {
             steps {
                 echo 'Clean..'
-		withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
+		//withMaven(jdk: 'JDK1.8', maven: 'MAVEN') {
     		// some block
         	//bat "mvn -Dmaven.test.failure.ignore=true clean " //this is working in windows
-			sh "mvn clean "
+		    def mvnHome = tool name: 'MAVEN', type: 'maven'
+		    sh "${mvnHome}/bin/mvn clean "
         	}
 
             }
